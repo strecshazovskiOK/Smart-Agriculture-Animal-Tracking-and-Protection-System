@@ -80,7 +80,7 @@ Repository Structure
 Contact Information
 For questions, feedback, or collaboration inquiries, please contact:
 
-Ömercan Kahveci – omercan.kahveci@example.com
+Ömercan Kahveci – omercan.kahveci@metu.edu.tr
 
 Dorukhan Doğan – dorukhan.dogan@metu.edu.tr
 
