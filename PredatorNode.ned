@@ -25,6 +25,6 @@ module PredatorNode extends StandardHost
         hasStatus = false;                    // disables IPv4/IPv6 setup
         *.numUdpApps = 0;                     // no network apps
         *.mobility.typename = "LinearMobility";
-        *.mobility.speed = default(2mps);     // you can override in ini
+        *.mobility.speed = default(2mps);     
         *.mobility.acceleration = default(1mps2);
 }
