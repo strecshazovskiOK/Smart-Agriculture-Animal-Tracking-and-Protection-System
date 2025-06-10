@@ -64,6 +64,9 @@ The **Smart Agriculture Animal Tracking and Protection System** is a simulation-
 │ ├── progress.pdf
 │ └── term_Project_Final_Report_2453298_2453165.pdf
 │ ├── *.ned, *.ini files
+## Run 
+-Please adjust your simulation with the following structure. 
+<img width="321" alt="Screenshot 2025-06-10 at 01 56 58" src="https://github.com/user-attachments/assets/66ef0146-99d4-4d42-8927-2fe39bcd7073" />
 
 ## Documentation
 You can view our final project report here:  
