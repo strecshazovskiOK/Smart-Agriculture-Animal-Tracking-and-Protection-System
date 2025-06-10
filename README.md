@@ -1,93 +1,81 @@
-Smart Agriculture Animal Tracking and Protection System
-Project Overview
-The Smart Agriculture Animal Tracking and Protection System is an IoT-based solution designed to introduce enhanced safety and monitoring to open-field cattle farming. It integrates GPS tracking, environmental sensors, and live camera monitoring into wearable cattle straps to detect and deter possible threats, such as predators, before any harm is caused. The system operates to reduce livestock losses, simplify farm management, and enhance animal welfare through proactive protection and automatic notifications.
+# Smart Agriculture Animal Tracking and Protection System
 
-Project Members
-Ömercan Kahveci – 2453298
-Dorukhan Doğan - 2453165
+## Project Overview
+The **Smart Agriculture Animal Tracking and Protection System** is a simulation-based IoT solution developed to improve the safety and monitoring of open-field cattle farming. By modeling GPS tracking, sensor-triggered threat detection, and wireless LoRa communication in OMNeT++ with FLoRa, the system simulates how livestock can be safeguarded from predators. The solution focuses on reducing livestock losses, improving automation in threat response, and supporting smarter decision-making through simulation outputs.
 
-Objectives
-Real-Time Monitoring
-Track cattle positions with GPS to hold animals within security boundaries.
+## Project Members
+- **Ömercan Kahveci** – 2453298  
+- **Dorukhan Doğan** – 2453165  
 
-Threat Detection & Deterrence
-Detect oncoming predators through motion sensors and camera processing and release non-lethal deterrents like flashing lights or alarm beeps.
+## Objectives
+- **Real-Time Monitoring**  
+  Simulate GPS-based cattle movement and boundary control.
 
-Automated Alerts
-Provide real-time alert to ranchers or farmers upon threat detection for quick action and tracking record.
+- **Threat Detection & Response**  
+  Model predator proximity using stochastic processes (Poisson distribution) and implement alert mechanisms for nearby threats.
 
-| Technology/Tool          | Purpose                                               |
-| ------------------------ | ----------------------------------------------------- |
-| **C**                    | Simulation prototype for predator detection           |
-| **OMNeT++ (planned)**    | Network simulation platform                           |
-| **FLoRa (planned)**      | LoRaWAN simulation framework in OMNeT++               |
-| **LoRaWAN (planned)**    | Long-range, low-power wireless communication protocol |
-| **Monte Carlo**          | Random simulation of environmental factors            |
-| **Poisson Distribution** | Modeling random predator appearance patterns          |
+- **Automated Alerts**  
+  Trigger broadcast alerts through LoRa network nodes when threats are detected, with OMNeT++ visual confirmation.
 
-Current Progress
-To date, the following milestones have been achieved:
+## Technologies and Tools
 
-A C-based simulation prototype has been established.
+| Technology/Tool            | Purpose                                               |
+|----------------------------|-------------------------------------------------------|
+| **C**                      | Prototype for movement logic and threat evaluation    |
+| **OMNeT++**                | Core network simulation platform                      |
+| **FLoRa**                  | LoRaWAN simulation extension for OMNeT++              |
+| **LoRaWAN**                | Long-range wireless communication model               |
+| **Poisson Distribution**   | Modeling random predator spawn events                 |
+| **Exponential Distribution** | Used for sensor intervals and mobility pauses     |
 
-The simulation correctly generates random cattle positions and predator sightings.
+## Current Progress
+- Developed and tested a **C-based logic prototype** to simulate cattle and predator behavior.
+- Transitioned to OMNeT++ with **FLoRa** to simulate real-world wireless communication.
+- Implemented detection logic based on Euclidean distance (80 meters).
+- Simulated randomized predator appearances and cattle movement.
+- Modeled alert broadcasting through an autonomous alert transmitter node.
+- Validated packet transmissions and behavior using visual outputs in OMNeT++.
 
-Predator proximity is evaluated using a detection radius (set to 80 meters).
+## Sample Output Logic
+- One cattle node and two predator nodes are simulated.
+- The predator within 80 meters triggers an alert and a deterrent mechanism.
+- The second predator, appearing at 300 meters, is ignored.
+- Alerts are broadcasted through LoRa using an alert transmitter component.
 
-Nearby predators issue warnings and deterrent responses, while distant ones are neglected.
+## Assumptions
+- Simulations assume clear weather and reliable GPS/sensor inputs.
+- An 80-meter detection range balances realism and communication effectiveness.
+- Predators follow typical stochastic hunting behavior.
+- LoRa communication range is sufficient for the simulation area.
 
-Output has been verified to correspond to expected behavior based on spatial distance.
+## Expected Impact
+- Demonstrates how system simulations can be used to validate smart agriculture designs.
+- Offers insights into detection efficiency, system response, and communication behavior without requiring hardware deployment.
+- Provides a framework for future enhancements like reactive cattle logic, energy-aware transmission, and physical hardware prototyping.
 
-Subsequent work using OMNeT++ with FLoRa is expected to model real-world communication behaviors and energy use.
+## Repository Structure
 
-
-Sample Output Logic
-One cow and two predators are generated in the simulation.
-
-The closest predator appears within 80 meters and is identified as dangerous.
-
-Deterrent responses (e.g., light, alarm) are activated for that predator.
-
-The second predator appears 300 meters away and is not noticed by the system.
-
-Assumptions
-All sensor and GPS modules function well in normal weather conditions.
-
-An 80-meter detection range is sufficient for detection of potential threats without alarms.
-
-Predators are assumed to exhibit typical natural hunting patterns in simulations.
-
-Communication systems (e.g., LoRa) are adequately in range and reliability.
-
-Expected Impact
-Reduction of livestock loss through timely detection and prevention of threats.
-
-Increased security and peace of mind for farmers managing remote or large grazing areas.
-
-Data-driven decision-making, enabling historic tracing of alarms and movement of livestock.
-
-
-Repository Structure
-📁 SmartAgri-AnimalTracking/
+📁 Smart-Agriculture-Animal-Tracking-and-Protection-System/
 ├── README.md
-├── reports/
-│   ├── proposal.pdf
-│   └── progress.pdf
 ├── code/
-│   └── main.c
+│ └── main.c
+├── doc/
+│ ├── proposal.pdf
+│ ├── progress.pdf
+│ └── term_Project_Final_Report_2453298_2453165.pdf
+│ ├── *.ned, *.ini files
 
+## Documentation
+You can view our final project report here:  
+[`term_Project_Final_Report_2453298_2453165.pdf`](doc/term_Project_Final_Report_2453298_2453165.pdf)
 
-Contact Information
-For questions, feedback, or collaboration inquiries, please contact:
+The report was written using the [IEEE Conference Template](https://www.ieee.org/conferences/publishing/templates.html) and prepared collaboratively on [Overleaf](https://www.overleaf.com/org/ieee) for LaTeX-based document editing and formatting.
 
-Ömercan Kahveci – omercan.kahveci@metu.edu.tr
+## Contact
+- **Ömercan Kahveci** – omercan.kahveci@metu.edu.tr  
+- **Dorukhan Doğan** – dorukhan.dogan@metu.edu.tr  
 
-Dorukhan Doğan – dorukhan.dogan@metu.edu.tr
-
-
-References
-FLoRa: Framework for LoRaWAN Simulation – Aalto University
-
-The Things Network Documentation on LoRaWAN
-
-Smith, J. K., et al. (2020). Economic Impacts of Predator Attacks on Cattle Farms. Journal of Agricultural Economics, 65(2), 485–500.
+## References
+- [FLoRa: Framework for LoRaWAN Simulation – Aalto University](https://flora.aalto.fi/)
+- [The Things Network Documentation on LoRaWAN](https://www.thethingsnetwork.org/docs/lorawan/)
+- Smith, J. K., et al. (2020). *Economic Impacts of Predator Attacks on Cattle Farms*. *Journal of Agricultural Economics*, 65(2), 485–500.
